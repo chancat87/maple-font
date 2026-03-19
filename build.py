@@ -505,8 +505,6 @@ class FontConfig:
         """Apply Nerd Font specific arguments."""
         if self.debug:
             self.nerd_font["enable"] = False
-        if args.nerd_font is not None:
-            self.nerd_font["enable"] = args.nerd_font
 
         if args.nf_mono:
             self.nerd_font["mono"] = args.nf_mono
@@ -515,6 +513,9 @@ class FontConfig:
         if args.nf_propo:
             self.nerd_font["propo"] = args.nf_propo
             self.nerd_font["enable"] = True
+
+        if args.nerd_font is not None:
+            self.nerd_font["enable"] = args.nerd_font
 
     def _apply_cn_options(self, args):
         """Apply Chinese font related arguments."""
